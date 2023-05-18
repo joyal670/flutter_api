@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:api_reference/number_model_response.dart';
 import 'package:http/http.dart' as http;
+
+import '../model/number_model_response.dart';
 
 Future<NumberModelResponse> getDataFromServer({required int number}) async {
   final _response =

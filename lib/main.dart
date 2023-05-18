@@ -1,6 +1,6 @@
+import 'package:api_reference/api/api.dart';
+import 'package:api_reference/screens/home_page.dart';
 import 'package:flutter/material.dart';
-
-import 'api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextFormField(
                 controller: _numberController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Enter number'),
               ),
               ElevatedButton(
@@ -63,13 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     if (_num == null) {
                       return;
                     }
-                    final _result =
+                    final result =
                         await getDataFromServer(number: int.parse(_num));
                     setState(() {
-                      resultText = _result.text ?? 'No trival text';
+                      resultText = result.text ?? 'No trival text';
                     });
                   },
-                  child: Text('Get APi')),
+                  child: const Text('Get APi')),
               Text(resultText)
             ],
           ),
