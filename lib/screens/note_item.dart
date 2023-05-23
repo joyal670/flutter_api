@@ -26,7 +26,7 @@ class NoteItem extends StatelessWidget {
             Navigator.of(context).push(MaterialPageRoute(builder: ((context) {
               return AddNoteScreen(
                 type: ActionType.editNote,
-                noteId: "1",
+                noteId: id,
               );
             })));
           },
@@ -45,9 +45,9 @@ class NoteItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        'Lostjwbefuhhgvgvgcgfcgfctfg',
+                        title,
                         maxLines: 1,
-                        style: TextStyle(
+                        style: const TextStyle(
                             overflow: TextOverflow.ellipsis,
                             fontStyle: FontStyle.normal,
                             color: Colors.black,
@@ -63,9 +63,9 @@ class NoteItem extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'skjdhfuabsfijnasjifdn',
+                  description,
                   maxLines: 5,
-                  style: TextStyle(
+                  style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       color: Colors.black,
                       fontStyle: FontStyle.normal,
